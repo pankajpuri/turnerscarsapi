@@ -7,7 +7,8 @@
     "nodemon": "^2.0.20"
   },
   "scripts": {
-    "test": "jest --env=node --watchAll --verbose "
+    "test": "jest --env=node --watchAll --verbose ",
+    "start": "node index.js"
   },
   "devDependencies": {
     "jest": "^22.2.2",
