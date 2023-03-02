@@ -22,7 +22,7 @@ const schema = new mongoose.Schema({
     type: Number,
   },
 });
-mongoose.set("bufferCommands", false);
+
 const Quote = mongoose.model("Quote", schema);
 
 exports.Quote = Quote;
