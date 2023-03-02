@@ -1,3 +1,3 @@
 {
-  "db": "mongodb://localhost:27017/turnerscars"
+  "db": "mongodb://0.0.0.0:27017/turnerscars"
 }
