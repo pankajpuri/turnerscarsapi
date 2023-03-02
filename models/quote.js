@@ -1,5 +1,16 @@
 const mongoose = require("mongoose");
 
+const config = require("config");
+
+const db = config.get("db");
+mongoose
+  .connect(db, {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+  })
+  .then(() => console.log(`connected to the ${db}.....`))
+  .catch((err) => console.error(`erros occured: ${err.message}`));
+
 const schema = new mongoose.Schema({
   model: {
     type: String,
@@ -22,7 +33,6 @@ const schema = new mongoose.Schema({
     type: Number,
   },
 });
-
 const Quote = mongoose.model("Quote", schema);
 
 exports.Quote = Quote;

@@ -5,7 +5,9 @@ const router = express.Router();
 const evaluateCar = require("../utilities/carvalue");
 
 router.get("/", async (req, res) => {
-  let quote = await Quote.find();
+  let quote = await Quote.find().sort("model");
+  if (quote === null) return res.send("There are no records in the database");
+
   res.send(quote);
 });
 
