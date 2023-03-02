@@ -45,7 +45,8 @@ jobs:
         - name: Start MongoDB
           uses: supercharge/mongodb-github-action@1.8.0
           with:
-           mongodb-version: ${{ env.MONGODB_VERSION }}
+            mongodb-version: ${{ env.MONGODB_VERSION }}
+            mongodb-port: 3000
 
 
       - name: npm install, build, and test
