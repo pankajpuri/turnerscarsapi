@@ -2,10 +2,6 @@ const Joi = require("joi");
 const mongoose = require("mongoose");
 const express = require("express");
 const config = require("config");
-const quote = require("./routers/quotes");
-
-const app = express();
-app.use(express.json());
 
 const db = config.get("db");
 mongoose
@@ -15,6 +11,11 @@ mongoose
   })
   .then(() => console.log(`connected to the ${db}.....`))
   .catch((err) => console.error(`erros occured: ${err.message}`));
+
+const quote = require("./routers/quotes");
+
+const app = express();
+app.use(express.json());
 
 app.use("/api/quote", quote);
 
