@@ -32,9 +32,8 @@ const schema = new mongoose.Schema({
   yearlyPremium: {
     type: Number,
   },
-  bufferCommands: false,
-  autoCreate: false,
 });
+mongoose.set("bufferCommands", false);
 const Quote = mongoose.model("Quote", schema);
 
 exports.Quote = Quote;
