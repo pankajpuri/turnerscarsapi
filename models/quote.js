@@ -21,6 +21,8 @@ const schema = new mongoose.Schema({
   yearlyPremium: {
     type: Number,
   },
+  bufferCommands: false,
+  autoCreate: false,
 });
 const Quote = mongoose.model("Quote", schema);
 
