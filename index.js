@@ -8,15 +8,15 @@ app.use(express.json());
 const config = require("config");
 const db = config.get("db");
 
-mongoose
-  .connect("mongodb://127.0.0.1:27017/turnerscars", {
-    useUnifiedTopology: true,
-    useNewUrlParser: true,
-  })
-  .then(() =>
-    console.log(`connected to the mongodb://localhost:27017/turnerscars.....`)
-  )
-  .catch((err) => console.error(`erros occured: ${err.message}`));
+// mongoose
+//   .connect("mongodb://127.0.0.1:27017/turnerscars", {
+//     useUnifiedTopology: true,
+//     useNewUrlParser: true,
+//   })
+//   .then(() =>
+//     console.log(`connected to the mongodb://localhost:27017/turnerscars.....`)
+//   )
+//   .catch((err) => console.error(`erros occured: ${err.message}`));
 
 app.use("/api/quote", quote);
 
