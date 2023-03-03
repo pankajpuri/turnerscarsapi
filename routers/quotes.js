@@ -7,7 +7,7 @@ const evaluateCar = require("../utilities/carvalue");
 
 router.get("/", async (req, res) => {
   mongoose
-    .connect("mongodb://localhost:27017/turnerscars", {
+    .connect("mongodb://127.0.0.1:27017/turnerscars", {
       useUnifiedTopology: true,
       useNewUrlParser: true,
     })
