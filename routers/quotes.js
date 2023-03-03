@@ -6,6 +6,16 @@ const router = express.Router();
 const evaluateCar = require("../utilities/carvalue");
 
 router.get("/", async (req, res) => {
+  mongoose
+    .connect("mongodb://localhost:27017/turnerscars", {
+      useUnifiedTopology: true,
+      useNewUrlParser: true,
+    })
+    .then(() =>
+      console.log(`connected to the mongodb://localhost:27017/turnerscars.....`)
+    )
+    .catch((err) => console.error(`erros occured: ${err.message}`));
+
   let quote = await mongoose.model("Quote").find().sort("model");
   if (quote === null) return res.send("There are no records in the database");
 
